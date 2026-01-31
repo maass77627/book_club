@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from "react";
+import BookContainer from "./BookContainer"
 
 function App() {
 const [user, setUser] = useState(null);
+const [books, setBooks] = useState([]);
 
 // useEffect(() => {
 //   fetch("http://localhost:3000/me", {
@@ -19,6 +21,15 @@ const [user, setUser] = useState(null);
 //       setUser(json)
 //   })
 // }, [])
+
+useEffect(() => {
+  fetch(`http://localhost:3000/books`)
+  .then((response) => response.json())
+  .then((json) => { 
+    console.log(json)
+    setBooks(json)
+  })
+})
 
 function login(username, password) {
   fetch("http://localhost:3000/login", {
@@ -45,7 +56,8 @@ function logout() {
 
   return (
     <div className="App">
-     <h1> I am the App</h1>
+     <h1> Book Club </h1>
+     <BookContainer books={books}></BookContainer>
      
     </div>
   );
