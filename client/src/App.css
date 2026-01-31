@@ -1,6 +1,42 @@
 .App {
   text-align: center;
-  background-color:#E0B0FF;
+  background-color:#b2b3c6;
+   font-family: "Goudy Bookletter 1911", serif; 
+  /* font-family: "Love Light", cursive; */
+   /* font-family: "Playwrite NZ Basic Guides", cursive; */
 }
 
+.book-image {
+  height: 100px;
+  width: 100px;
+}
 
+.book-container {
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.book-title {
+  font-family: "Love Light", cursive;
+
+}
+
+.book {
+  height: 350px;
+  width: 300px;
+  background-color: coral;
+  font-family: "Playwrite NZ Basic Guides", cursive;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 1px;
+  border-style: groove;
+ 
+}
+
+/* .goudy-bookletter-1911-regular {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 400;
+  font-style: normal;
+} */

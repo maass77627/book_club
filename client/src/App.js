@@ -29,7 +29,7 @@ useEffect(() => {
     console.log(json)
     setBooks(json)
   })
-})
+}, [])
 
 function login(username, password) {
   fetch("http://localhost:3000/login", {
