@@ -57,6 +57,7 @@ function logout() {
   return (
     <div className="App">
      <h1> Book Club </h1>
+     <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      <BookContainer books={books}></BookContainer>
      
     </div>
