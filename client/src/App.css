@@ -27,7 +27,13 @@
 
 }
 
+.hero-title {
+  background-color: lightgrey;
+  box-shadow: 2px 3px 17px black;
+}
+
 .book {
+  
   height: 350px;
   width: 300px;
   background-color: rgb(207, 159, 142);
@@ -40,13 +46,28 @@
  
 }
 
-/* .goudy-bookletter-1911-regular {
-  font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 400;
-  font-style: normal;
-} */
+.book-form {
+  position: absolute;
+  top: 300px;
+  left: 400px;
+   border-radius: 25px;
+  background-color: bisque;
+  height: 300px; 
+   width: 300px; 
+   display: flex;  
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   
+}
+
+
+
+
 
 .hero-image {
+  
   box-shadow: 2px 3px 17px black;
   width: 70%;
   height: 200px;;

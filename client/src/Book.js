@@ -4,6 +4,7 @@ import React from "react";
 function Book ({book}) {
     return (
         <div className="book">
+            <i class="fa-solid fa-pen-fancy"></i>
              <h1 className="book-title">{book.title}</h1>
              <img className="book-image" src={book.image} alt="bookalt"/>
              <p>{book.author}</p>

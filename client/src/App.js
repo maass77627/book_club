@@ -2,6 +2,8 @@
 import './App.css';
 import { useEffect, useState } from "react";
 import BookContainer from "./BookContainer"
+import BookForm from './BookForm';
+
 
 function App() {
 const [user, setUser] = useState(null);
@@ -56,9 +58,10 @@ function logout() {
 
   return (
     <div className="App">
-     <h1> Book Club </h1>
+     <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      <BookContainer books={books}></BookContainer>
+     <BookForm books={books} setBooks={setBooks}></BookForm>
      
     </div>
   );
