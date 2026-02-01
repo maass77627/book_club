@@ -35,8 +35,10 @@ function BookForm({books, setBooks}) {
   }
 
   return (
-    <div>
+    
+
     <form className="book-form" onSubmit={handleSubmit}>
+        <label>Add your Book</label>
       <input name="title" placeholder="Title" value={formData.title} onChange={handleChange} />
 
       <input name="author" placeholder="Author" value={formData.author} onChange={handleChange} />
@@ -49,7 +51,7 @@ function BookForm({books, setBooks}) {
 
       <button type="submit">Add Book</button>
     </form>
-    </div>
+    
   );
 }
 
