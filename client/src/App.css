@@ -6,6 +6,11 @@
    /* font-family: "Playwrite NZ Basic Guides", cursive; */
 }
 
+.nav {
+  background-color: cadetblue;
+  height: 70px;
+}
+
 .book-image {
   
   height: 100px;

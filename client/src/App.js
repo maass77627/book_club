@@ -1,8 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
+import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import BookContainer from "./BookContainer"
 import BookForm from './BookForm';
+import Home from "./Home";
+import {Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -58,10 +61,17 @@ function logout() {
 
   return (
     <div className="App">
+      <Nav></Nav>
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
-     <BookContainer books={books}></BookContainer>
+     {/* <BookContainer books={books}></BookContainer> */}
      <BookForm books={books} setBooks={setBooks}></BookForm>
+
+     <Routes>
+      <Route path="/" element={<Home></Home>}/>
+        <Route path="/books" element={<BookContainer books={books}></BookContainer>}/> 
+         
+     </Routes>
      
     </div>
     
