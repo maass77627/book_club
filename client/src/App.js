@@ -12,20 +12,20 @@ function App() {
 const [user, setUser] = useState(null);
 const [books, setBooks] = useState([]);
 
-// useEffect(() => {
-//   fetch("http://localhost:3000/me", {
+useEffect(() => {
+  fetch("http://localhost:3000/me", {
 
-//   })
-//   .then((response) => {
-//      if (response.ok) {
-//        response.json()
-//     }
-//   })
-//    .then((json) => {
-//      console.log(json)
-//       setUser(json)
-//   })
-// }, [])
+  })
+  .then((response) => {
+     if (response.ok) {
+       response.json()
+    }
+  })
+   .then((json) => {
+     console.log(json)
+      setUser(json)
+  })
+}, [])
 
 useEffect(() => {
   fetch(`http://localhost:3000/books`)
@@ -36,17 +36,7 @@ useEffect(() => {
   })
 }, [])
 
-function login(username, password) {
-  fetch("http://localhost:3000/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username, password })
-  }).then(res => {
-    if (res.ok) {
-      res.json().then(setUser);
-    }
-  });
-}
+
 
 
 function logout() {
@@ -68,7 +58,7 @@ function logout() {
      <BookForm books={books} setBooks={setBooks}></BookForm>
 
      <Routes>
-      <Route path="/" element={<Home></Home>}/>
+      <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
         <Route path="/books" element={<BookContainer books={books}></BookContainer>}/> 
          
      </Routes>

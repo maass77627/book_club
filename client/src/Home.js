@@ -1,7 +1,9 @@
 import React from "react"
+import LoginForm from "./LoginForm"
 
 
-function Home() {
+function Home({user, setUser}) {
+    console.log(user)
 
 
 
@@ -9,7 +11,7 @@ function Home() {
     return (
         <div className="home">
             <p>This is the Home</p>
-             
+             {user ? <h2>Welcome, {user.username}!</h2> : <LoginForm setUser={setUser}></LoginForm>}
         </div>
     )
 }
