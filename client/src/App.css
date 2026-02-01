@@ -14,9 +14,11 @@
 
 .book-container {
   background-color: cadetblue;
+  /* width: 800px; */
   display: flex;
   justify-content: space-around;
   overflow-y: auto;
+  
 
 }
 
@@ -71,4 +73,8 @@
   box-shadow: 2px 3px 17px black;
   width: 70%;
   height: 200px;;
+}
+
+.hidden {
+  visibility: hidden;
 }
