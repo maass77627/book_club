@@ -37,7 +37,7 @@ function BookForm({books, setBooks}) {
   return (
     
 
-    <form className="book-form hidden" onSubmit={handleSubmit}>
+    <form className="book-form" onSubmit={handleSubmit}>
         <label>Add your Book</label>
       <input name="title" placeholder="Title" value={formData.title} onChange={handleChange} />
 

@@ -6,11 +6,13 @@ import BookContainer from "./BookContainer"
 import BookForm from './BookForm';
 import Home from "./Home";
 import {Routes, Route} from "react-router-dom";
+// import Footer from "./Footer"
 
 
 function App() {
 const [user, setUser] = useState(null);
 const [books, setBooks] = useState([]);
+const [bookFormToggle, setBookFormToggle] = useState(false);
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
@@ -48,18 +50,18 @@ console.log(user)
 
   return (
     <div className="App">
-      <Nav user={user}></Nav>
+      <Nav bookFormToggle={bookFormToggle} setBookFormToggle={setBookFormToggle} user={user}></Nav>
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      {/* <BookContainer books={books}></BookContainer> */}
-     <BookForm books={books} setBooks={setBooks}></BookForm>
+    {bookFormToggle && <BookForm books={books} setBooks={setBooks}></BookForm>}
 
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
         <Route path="/books" element={<BookContainer books={books}></BookContainer>}/> 
          
      </Routes>
-     
+     {/* <Footer></Footer> */}
     </div>
     
   );
