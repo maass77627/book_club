@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
  wrap_parameters format: []
 
    def create
-     debugger
+    #  debugger
      user = User.find_by(username: params[:username].downcase)
     if user && user.authenticate(params[:password])
      session[:user_id] = user.id
