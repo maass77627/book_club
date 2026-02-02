@@ -1,5 +1,6 @@
 import React from "react"
 import LoginForm from "./LoginForm"
+import SignUp from "./SignUp"
 
 
 function Home({user, setUser}) {
@@ -12,6 +13,7 @@ function Home({user, setUser}) {
         <div className="home">
             <p>This is the Home</p>
              {user ? <h2>Welcome, {user.username}!</h2> : <LoginForm setUser={setUser}></LoginForm>}
+             <SignUp setUser={setUser}></SignUp>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react"
 
-function LoginForm() {
+function LoginForm({setUser}) {
     const [username, setUsername] = useState([])
     const[password, setPassword] = useState([])
 
@@ -9,6 +9,7 @@ function LoginForm() {
         e.preventDefault()
         fetch(`http://localhost:3000/login`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -17,6 +18,9 @@ function LoginForm() {
         .then((response) => response.json())
         .then((json) => {
             console.log(json)
+            setUser(json)
+            console.log(json)
+            
         })
         
         
@@ -26,12 +30,14 @@ function LoginForm() {
 
     return (
         <div>
-            <Form onSubmit={(e) =>handleSubmit(e)} className="login-form">
-                <input type="text" placeholder="Username" name="username" value={username}></input>
-                <input type="text" placeholder="Password" name="password" value={password}></input>
-                <submit type="submit" ></submit>
+            
+            <form onSubmit={(e) =>handleSubmit(e)} className="login-form">
+                <label>Login</label><br></br>
+                <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" name="username" value={username}></input>
+                <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="Password" name="password" value={password}></input><br></br>
+                <button type="submit"  >Submit</button>
 
-            </Form>
+            </form>
         </div>
     )
 }

@@ -5,6 +5,7 @@ function Book ({book}) {
 
     function handleDelete(id) {
         fetch(`http://localhost:3000/books/${id}`,{
+            credentials: "include",
             method: "DELETE"
         })
     }

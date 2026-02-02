@@ -14,11 +14,12 @@ const [books, setBooks] = useState([]);
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
+    credentials: "include"
 
   })
   .then((response) => {
      if (response.ok) {
-       response.json()
+      return response.json()
     }
   })
    .then((json) => {
@@ -39,19 +40,15 @@ useEffect(() => {
 
 
 
-function logout() {
-  fetch("http://localhost:3000/logout", {
-    method: "DELETE",
-  }).then(() => setUser(null));
-}
 
+console.log(user)
 
 
 
 
   return (
     <div className="App">
-      <Nav></Nav>
+      <Nav user={user}></Nav>
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      {/* <BookContainer books={books}></BookContainer> */}

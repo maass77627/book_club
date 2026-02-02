@@ -74,8 +74,15 @@
    
 }
 
+.login-form {
+  background-color: chartreuse;
+  width: 300px;
+}
 
-
+.signup{
+  background-color: blueviolet;
+  width: 400px;
+}
 
 
 .hero-image {
