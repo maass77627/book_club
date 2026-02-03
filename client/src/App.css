@@ -52,7 +52,7 @@
 
 .book {
   padding: 10px;
-  
+  margin-left: 20px;
   height: 350px;
   width: 300px;
   background-color: rgb(207, 159, 142);
@@ -66,6 +66,7 @@
 }
 
 .book-form {
+  
   position: absolute;
   top: 300px;
   left: 600px;
@@ -92,7 +93,7 @@
 .signup{
   position: absolute;
   margin-top: -300px;
-  margin-left: 800px;
+  margin-left: 550px;
   background-color: rgb(9, 9, 9);
   width: 400px;
   color: white;
@@ -140,5 +141,19 @@
   margin-left: -100px;
   font-size: larger;
 
+}
+
+.book-edit-form {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+ background-color: coral;
+ width: 20%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+  
 }
 

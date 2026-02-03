@@ -58,7 +58,7 @@ console.log(user)
 
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
-        <Route path="/books" element={<BookContainer books={books}></BookContainer>}/> 
+        <Route path="/books" element={<BookContainer setBooks={setBooks} books={books}></BookContainer>}/> 
          
      </Routes>
      {/* <Footer></Footer> */}

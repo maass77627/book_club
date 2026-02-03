@@ -26,11 +26,12 @@ function BookForm({books, setBooks}) {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: "include",
       body: JSON.stringify(formData)
     })
       .then(res => res.json())
       .then(json => {
-        setBooks(json);
+        setBooks([...books, json]);
       });
   }
 
