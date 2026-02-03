@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :books
-  resources :users
+   resources :books 
+resources :users
+
+get "users/:user_id/books", to: "books#user_books"
+ 
+  # resources :users, only: [:show] do
+
+  #   resources :books
+
+  # end
   
    post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

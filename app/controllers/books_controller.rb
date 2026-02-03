@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    wrap_parameters format: []
 
     def index
        books = Book.all
@@ -7,13 +8,24 @@ class BooksController < ApplicationController
     end    
 
     def create
-     book = Book.create(book_params)
-        if book.valid?
-            render json: book
-        else
-        render json: {errors: book.errors.full_messages }, status: :unprocessable_entity
-        end
-    end
+      book = Book.new(book_params)
+      book.user_id = session[:user_id]
+
+        if book.save
+       render json: book, status: :created
+      else
+       render json: { errors: book.errors.full_messages }, status: :unprocessable_entity
+       end
+       end
+
+       def update
+        book = Book.find_by(id: params[:id])
+        book.update(book_params)
+        render json: book
+
+
+
+       end
 
     def show
         book = Book.find_by(id: params[:id])
