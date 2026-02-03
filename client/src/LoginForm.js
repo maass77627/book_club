@@ -7,6 +7,10 @@ function LoginForm({setUser}) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        console.log({
+  username,
+  password
+})
         fetch(`http://localhost:3000/login`, {
             method: "POST",
             credentials: "include",

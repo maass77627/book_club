@@ -7,6 +7,7 @@ import BookForm from './BookForm';
 import Home from "./Home";
 import {Routes, Route} from "react-router-dom";
 // import Footer from "./Footer"
+import Profile from "./Profile";
 
 
 function App() {
@@ -23,6 +24,7 @@ useEffect(() => {
      if (response.ok) {
       return response.json()
     }
+    return null
   })
    .then((json) => {
      console.log(json)
@@ -55,7 +57,7 @@ console.log(user)
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      {/* <BookContainer books={books}></BookContainer> */}
     {bookFormToggle && <BookForm books={books} setBooks={setBooks}></BookForm>}
-
+       {user && <Profile user={user}></Profile>}
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
         <Route path="/books" element={<BookContainer setBooks={setBooks} books={books}></BookContainer>}/> 

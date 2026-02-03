@@ -23,7 +23,7 @@ function Book ({book, setBooks, books}) {
 
     return (
         <div className="book">
-            {editToggle && <BookEditForm book={book}></BookEditForm>}
+            {editToggle && <BookEditForm setBooks={setBooks} book={book}></BookEditForm>}
             {/* <button onClick={() => handleDelete(book.id)}>x</button> */}
             <i  onClick={() => handleDelete(book.id)} className="fa-regular fa-trash-can"></i>
             <i  className="fa-solid fa-pen-fancy"></i>

@@ -14,12 +14,15 @@ function BookEditForm({book, setBooks, books}) {
 
 
   function handleChange(e) {
+
     
     setFormData({...formData, [e.target.name]: e.target.value })
 
   }
 
   function handleSubmit(e, id) {
+    console.log(id)
+    console.log(formData)
     e.preventDefault()
     fetch(`http://localhost:3000/books/${id}`, {
       method: "PATCH",
@@ -54,7 +57,7 @@ function BookEditForm({book, setBooks, books}) {
            <input name="image"  value={formData.image} onChange={(e) => handleChange(e)}/>
 
             <textarea name="description" placeholder="Description" value={formData.description} onChange={handleChange}/>
-            <submit type="submit">Edit Book</submit>
+            <input className="submit" type="submit"></input>
 
         </form>
     )

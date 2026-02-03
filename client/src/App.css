@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  background-color:#b2b3c6;
+  background-color:#020310;
+ color: black;
+
    font-family: "Goudy Bookletter 1911", serif; 
   /* font-family: "Love Light", cursive; */
    /* font-family: "Playwrite NZ Basic Guides", cursive; */
@@ -24,10 +26,15 @@
 
 .book-container {
   background-color: cadetblue;
+  width: 50%;
+  gap: 20px;
   /* width: 800px; */
   display: flex;
   justify-content: space-around;
-  overflow-y: auto;
+   overflow-y: scroll;  
+  /* overflow-x: scroll;  */
+  overflow-x: auto;
+overflow-y: hidden;
   
 
 }
@@ -40,9 +47,9 @@
 }
 
 .book-button {
-  position: absolute;
-  margin-top: 40px;
-  margin-left: -100px;
+  /* position: absolute; */
+  /* margin-top: 40px; */
+  /* margin-left: -100px; */
 }
 
 .hero-title {
@@ -51,11 +58,12 @@
 }
 
 .book {
+flex-shrink: 0;
   padding: 10px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   height: 350px;
   width: 300px;
-  background-color: rgb(207, 159, 142);
+  background-color: rgb(170, 157, 152);
   box-shadow: 2px 3px 17px black;
   font-family: "Playwrite NZ Basic Guides", cursive;
   border-radius: 25px;
@@ -67,13 +75,15 @@
 
 .book-form {
   
-  position: absolute;
-  top: 300px;
-  left: 600px;
+   position: absolute; 
+   
+   top: 100px; 
+  left: 600px; 
    border-radius: 25px;
-  background-color: bisque;
-  height: 300px; 
-   width: 300px; 
+  background-color: rgb(1, 37, 2);
+  height: 300px;
+  max-width: 300px; 
+   width: 100%; 
    display: flex;  
    flex-direction: column;
    justify-content: center;
@@ -112,42 +122,43 @@
 }
 
 .fa-trash-can {
-  position: absolute;
-  margin-top: 0px;
-  margin-left: 100px;
+  /* position: absolute; */
+  /* margin-top: 0px; */
+  /* margin-left: 100px; */
   font-size: larger;
 }
 
 .fa-pen-fancy {
-  position: absolute;
-  margin-top: 0px;
-  margin-left: 60px;
+  /* position: absolute; */
+  /* margin-top: 0px; */
+  /* margin-left: 60px; */
   font-size: larger;
 
 }
 
 .fa-pen-fancy {
-  position: absolute;
-  margin-top: 0px;
-  margin-left: 60px;
+  /* position: absolute; */
+  /* margin-top: 0px; */
+  /* margin-left: 60px; */
   font-size: larger;
 
 }
 
 
 .fa-screwdriver {
-  position: absolute;
-  margin-top: 0px;
-  margin-left: -100px;
+  /* position: absolute; */
+  /* margin-top: 0px; */
+  /* margin-left: -100px; */
   font-size: larger;
 
 }
 
 .book-edit-form {
-  position: fixed;
+  position: fixed; 
+  left: 600px;
   top: 20%;
-  left: 50%;
- background-color: coral;
+  color: white;
+ background-color: rgb(1, 28, 11);
  width: 20%;
  height: auto;
  display: flex;
@@ -155,5 +166,9 @@
  justify-content: center;
  align-items: center;
   
+}
+
+.submit {
+  font-family: 'Courier New', Courier, monospace;
 }
 
