@@ -60,9 +60,9 @@ overflow-y: hidden;
 
 }
 
-.book-button {
+/* .book-button {
  
-}
+} */
 
 .hero-title {
   background-color: lightgrey;
@@ -215,5 +215,22 @@ flex-shrink: 0;
   max-width: 300px;
   width: 100%;
   border-radius: 25px;
+}
+
+.user-container {
+  background-color: darkorange;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.user {
+  display: flex;
+  border-radius: 25px;
+  background-color: white;
+  height: 300px;
+ max-width: 400px;
+ width: 100%;
 }
 

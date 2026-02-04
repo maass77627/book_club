@@ -10,13 +10,14 @@ import {Routes, Route} from "react-router-dom";
 // import Profile from "./Profile";
 import ReviewsContainer from './ReviewsContainer';
 import ReviewForm from './ReviewForm';
-
+import UserContainer from './UserContainer';
 
 function App() {
 const [user, setUser] = useState(null);
 const [books, setBooks] = useState([]);
 const [bookFormToggle, setBookFormToggle] = useState(false);
 const [reviewFormToggle, setReviewFormToggle] = useState(false)
+const [users, setUsers] = useState([])
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
@@ -44,6 +45,16 @@ useEffect(() => {
   })
 }, [])
 
+useEffect(() => {
+   fetch(`http://localhost:3000/users`)
+  .then((response) => response.json())
+  .then((json) => { 
+    console.log(json)
+    setUsers(json)
+  })
+
+}, [])
+
 
 
 
@@ -69,6 +80,7 @@ console.log(user)
          
      </Routes>
      <ReviewsContainer></ReviewsContainer>
+     <UserContainer users={users}></UserContainer>
       <Footer></Footer> 
     </div>
     
