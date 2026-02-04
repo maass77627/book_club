@@ -1,9 +1,10 @@
 import React from "react";
 import {useState} from "react";
 import BookEditForm from "./BookEditForm";
+// import ReviewForm from './ReviewForm';
 
 
-function Book ({book, setBooks, books}) {
+function Book ({book, setBooks, books, setReviewFormToggle, reviewFormToggle}) {
     const [editToggle, setEditToggle] = useState(false)
 
     function handleDelete(id) {
@@ -26,7 +27,7 @@ function Book ({book, setBooks, books}) {
             {editToggle && <BookEditForm setBooks={setBooks} book={book}></BookEditForm>}
             {/* <button onClick={() => handleDelete(book.id)}>x</button> */}
             <i  onClick={() => handleDelete(book.id)} className="fa-regular fa-trash-can"></i>
-            <i  className="fa-solid fa-pen-fancy"></i>
+            <i onClick={() => setReviewFormToggle(!reviewFormToggle)}  className="fa-solid fa-pen-fancy"></i>
             <i onClick={() => handleEdit(book)} className="fa-solid fa-screwdriver"></i>
              <h1 className="book-title">{book.title}</h1>
              <img className="book-image" src={book.image} alt="bookalt"/>

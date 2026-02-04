@@ -6,7 +6,9 @@ function ReviewsContainer() {
 
 
     return (
-        <div></div>
+        <div className="reviews-container">
+
+        </div>
     )
 }
 

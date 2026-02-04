@@ -5,6 +5,7 @@ import {useState} from "react"
 function SignUp({setUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [image, setImage] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
 
 
@@ -16,7 +17,7 @@ function SignUp({setUser}) {
             "Content-Type": "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({username: username, password: password, password_confirmation: password_confirmation})
+        body: JSON.stringify({username: username, password: password, password_confirmation: password_confirmation, image: image})
     })
     .then((response) => response.json())
     .then((json) => {
@@ -35,6 +36,8 @@ function SignUp({setUser}) {
             <input onChange={(e) => setPassword(e.target.value)} type="text" name="password" value={password}></input><br></br>
             <label>Password Confirmation</label><br></br>
             <input onChange={(e) => setPasswordConfirmation(e.target.value)} type="text" name="password_confirmation" value={password_confirmation}></input>
+            <label>Image</label><br></br>
+            <input onChange={(e) => setImage(e.target.value)} type="text" name="image" value={image}></input>
               <button type="submit">Submit</button>
         </form>
 

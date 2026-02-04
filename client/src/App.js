@@ -6,14 +6,17 @@ import BookContainer from "./BookContainer"
 import BookForm from './BookForm';
 import Home from "./Home";
 import {Routes, Route} from "react-router-dom";
-// import Footer from "./Footer"
-import Profile from "./Profile";
+ import Footer from "./Footer"
+// import Profile from "./Profile";
+import ReviewsContainer from './ReviewsContainer';
+import ReviewForm from './ReviewForm';
 
 
 function App() {
 const [user, setUser] = useState(null);
 const [books, setBooks] = useState([]);
 const [bookFormToggle, setBookFormToggle] = useState(false);
+const [reviewFormToggle, setReviewFormToggle] = useState(false)
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
@@ -52,18 +55,21 @@ console.log(user)
 
   return (
     <div className="App">
+
       <Nav bookFormToggle={bookFormToggle} setBookFormToggle={setBookFormToggle} user={user}></Nav>
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
-     {/* <BookContainer books={books}></BookContainer> */}
+     
+     {reviewFormToggle && <ReviewForm></ReviewForm>}
     {bookFormToggle && <BookForm books={books} setBooks={setBooks}></BookForm>}
-       {user && <Profile user={user}></Profile>}
+      
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
-        <Route path="/books" element={<BookContainer setBooks={setBooks} books={books}></BookContainer>}/> 
+        <Route path="/books" element={<BookContainer reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} user={user} setBooks={setBooks} books={books}></BookContainer>}/> 
          
      </Routes>
-     {/* <Footer></Footer> */}
+     <ReviewsContainer></ReviewsContainer>
+      <Footer></Footer> 
     </div>
     
   );

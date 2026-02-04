@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
    resources :books 
-resources :users
+  resources :users
 
 get "users/:user_id/books", to: "books#user_books"
+get "users/:user_id/reviews", to: "books#user_book_reviews"
  
   # resources :users, only: [:show] do
 
