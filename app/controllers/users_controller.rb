@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    #  include ActionController::Cookies
+   
  wrap_parameters format: []
 
  def index

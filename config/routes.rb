@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-   resources :books 
+  resources :books 
   resources :users
+  resources :reviews
 
 get "users/:user_id/books", to: "books#user_books"
-get "users/:user_id/reviews", to: "books#user_book_reviews"
+get "users/:user_id/book_reviews", to: "books#user_book_reviews"
  
   # resources :users, only: [:show] do
 
@@ -13,9 +14,9 @@ get "users/:user_id/reviews", to: "books#user_book_reviews"
   # end
   
    post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+   delete "/logout", to: "sessions#destroy"
    post "/signup", to: "users#create"
-  get "/me", to: "users#show"
+   get "/me", to: "users#show"
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
