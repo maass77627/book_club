@@ -3,7 +3,8 @@ class BooksController < ApplicationController
 
     def index
        books = Book.all
-       render json: books.as_json(except: [:created_at, :updated_at])
+       render json: books
+    #    .as_json(except: [:created_at, :updated_at])
 
     end    
 
@@ -17,22 +18,22 @@ class BooksController < ApplicationController
        end
        end
 
-       def user_book_reviews
-         user = User.find_by(id: params[:user_id])
-         books = user.books
-           bookreviews =  books.map {
-           | book | { book: book.as_json(
-         except: [:created_at, :updated_at]
-        ), review: book.reviews.where(user_id: user.id)}
-        }
-       render json: bookreviews
-        # debugger
-       end
+    #    def user_book_reviews
+    #      user = User.find_by(id: params[:user_id])
+    #      books = user.books
+    #        bookreviews =  books.map {
+    #        | book | { book: book.as_json(
+    #      except: [:created_at, :updated_at]
+    #     ), review: book.reviews.where(user_id: user.id)}
+    #     }
+    #    render json: bookreviews
+    #     # debugger
+    #    end
 
-       def user_books
-        user = User.find_by(id: params[:user_id])
-        render json: user.books.as_json(include: [:user])
-        end
+    #    def user_books
+    #     user = User.find_by(id: params[:user_id])
+    #     render json: user.books.as_json(include: [:user])
+    #     end
 
        def update
         book = Book.find_by(id: params[:id])

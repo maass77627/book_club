@@ -47,7 +47,6 @@ function LoginForm({setUser}) {
                 <label>Login</label><br></br>
                 <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" name="username" value={username}></input>
                 <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="Password" name="password" value={password}></input><br></br>
-                {/* <input onChange={(e) => setImage(e.target.value)} type="text" placeholder="Image" name="image" value={image}></input><br></br> */}
                 <button onClick={() => console.log("LOGIN BUTTON CLICKED")} type="submit"  >Submit</button>
 
             </form>

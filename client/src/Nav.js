@@ -1,25 +1,19 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
-// import { useState } from "react"
 
-function Nav({user, setBookFormToggle, bookFormToggle}) {
+
+function Nav({setBookFormToggle, bookFormToggle}) {
     
-    //  const [showLogin, setShowLogin] = useState([])
-
-
-    // function handleLogout() {
-
-
-    // }
 
     
 
     return (
         <div className="nav">
             <NavLink className="link" to="/">Home</NavLink>
-            <NavLink className="link" to="/books">Books</NavLink>
+            <NavLink className="link" to="/profile">Profile</NavLink>
             <button onClick={() => setBookFormToggle(!bookFormToggle)} className="book-button">Add A Book</button>
-            {/* <button onClick={handle}>Login</button> */}
+            <NavLink className="link" to="/books">Library</NavLink>
+            <NavLink className="link" to="/users">Friends</NavLink>
             
 
         </div>

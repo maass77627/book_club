@@ -4,6 +4,7 @@
  color: rgb(63, 57, 57);
 
    font-family: "Goudy Bookletter 1911", serif; 
+
   /* font-family: "Love Light", cursive; */
    /* font-family: "Playwrite NZ Basic Guides", cursive; */
 }
@@ -180,21 +181,31 @@ flex-shrink: 0;
 
 .profile {
   background-color:rgb(15, 70, 16);
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
   height: 400px;
   display: flex;
   justify-content: space-around;
 }
 
-.pro-book-img {
-  height: 50px;
-}
+/* .pro-book-img {
+  height: 150px;
+} */
 
 .pro-img {
   border-radius: 50px;
   height: auto;
   width: auto;
+}
+
+.pro-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pro-book-image {
+  height: 200px;
 }
 
 .footer {
@@ -203,36 +214,66 @@ flex-shrink: 0;
 }
 
 .reviews-container {
-  background-color: rgb(141, 91, 5);
+  background-color: rgb(1, 81, 64);
   height: 300px;
   width: 100%;
 }
 
 .review-form {
   position: absolute;
-  margin-top: 0px;
-  margin-left: 700px;
-  background-color: rgb(150, 115, 18);
+  margin-top: -300px;
+  margin-left: 600px;
+  background-color: rgb(4, 98, 70);
   height: 300px;
   max-width: 300px;
   width: 100%;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .user-container {
-  background-color: darkorange;
-  height: 300px;
+  padding: 30px;
+  background-color: rgb(2, 91, 75);
+  height: 600px;
   width: 100%;
   display: flex;
   gap: 10px;
 }
 
 .user {
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
   display: flex;
   border-radius: 25px;
   background-color: white;
   height: 300px;
- max-width: 400px;
- width: 100%;
+  width: auto;
+ /* max-width: 400px;
+ width: 100%; */
 }
 
+.user-books {
+  
+ display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.pro-books {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

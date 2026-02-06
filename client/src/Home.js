@@ -32,12 +32,9 @@ function handleLogout() {
     return (
         <div className="home">
             {user ? <><h2>Welcome, {user.username}!</h2> <button onClick={() => handleLogout()}>Logout</button></>: <> <p>Already a user?</p> <button onClick={() =>showLoginForm()}>Login</button> <p>Need an account?</p> <button onClick={() => signUpForm()}>Sign Up</button></>}
-            {/* <button onClick={() => handleLogout()}>Logout</button> */}
             <p>This is the Home</p>
             {showLogin && <LoginForm setUser={setUser}></LoginForm>}
             {showSignUp && <SignUp setUser={setUser}></SignUp> }
-            {/* {user ? <h2>Welcome, {user.username}!</h2> : <LoginForm setUser={setUser}></LoginForm>}
-             <SignUp setUser={setUser}></SignUp> */}
         </div>
     )
 }

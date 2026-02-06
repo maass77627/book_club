@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :books 
-  resources :users
-  resources :reviews
-
-get "users/:user_id/books", to: "books#user_books"
-get "users/:user_id/book_reviews", to: "books#user_book_reviews"
+  resources :books do 
+    resources :reviews, only: [:create]
+  end
  
-  # resources :users, only: [:show] do
+ 
+    resources :users
+  #  resources :reviews
 
-  #   resources :books
-
-  # end
+# get "users/:user_id/books", to: "books#user_books"
+# get "users/:user_id/book_reviews", to: "books#user_book_reviews"
+ 
+ 
   
    post "/login", to: "sessions#create"
    delete "/logout", to: "sessions#destroy"

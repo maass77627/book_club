@@ -7,7 +7,7 @@ import BookForm from './BookForm';
 import Home from "./Home";
 import {Routes, Route} from "react-router-dom";
  import Footer from "./Footer"
-// import Profile from "./Profile";
+ import Profile from "./Profile";
 import ReviewsContainer from './ReviewsContainer';
 import ReviewForm from './ReviewForm';
 import UserContainer from './UserContainer';
@@ -18,6 +18,7 @@ const [books, setBooks] = useState([]);
 const [bookFormToggle, setBookFormToggle] = useState(false);
 const [reviewFormToggle, setReviewFormToggle] = useState(false)
 const [users, setUsers] = useState([])
+const [reviewBook, setReviewBook] = useState([])
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
@@ -71,12 +72,14 @@ console.log(user)
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      
-     {reviewFormToggle && <ReviewForm></ReviewForm>}
+     {reviewFormToggle && <ReviewForm setBooks={setBooks} reviewBook={reviewBook} user={user}></ReviewForm>}
     {bookFormToggle && <BookForm books={books} setBooks={setBooks}></BookForm>}
-      <UserContainer users={users}></UserContainer>
+      {/* <UserContainer users={users}></UserContainer> */}
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
-        <Route path="/books" element={<BookContainer reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} user={user} setBooks={setBooks} books={books}></BookContainer>}/> 
+        <Route path="/books" element={<BookContainer reviewBook={reviewBook} setReviewBook={setReviewBook} reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} user={user} setBooks={setBooks} books={books}></BookContainer>}/>
+         <Route path="/users" element={<UserContainer books={books} users={users}></UserContainer>}/> 
+         <Route path="/profile" element={<Profile setReviewFormToggle={setReviewFormToggle} reviewFormToggle={reviewFormToggle} setReviewBook={setReviewBook}  setBooks={setBooks}  books={books} user={user}></Profile>}/> 
          
      </Routes>
      <ReviewsContainer></ReviewsContainer>

@@ -1,34 +1,19 @@
 import React from "react";
-import {useState} from "react";
-import BookEditForm from "./BookEditForm";
-// import ReviewForm from './ReviewForm';
 
 
-function Book ({book, setBooks, books, setReviewFormToggle, reviewFormToggle}) {
-    const [editToggle, setEditToggle] = useState(false)
+function Book ({book, setReviewFormToggle, reviewFormToggle, setReviewBook}) {
+   
 
-    function handleDelete(id) {
-        fetch(`http://localhost:3000/books/${id}`,{
-            credentials: "include",
-            method: "DELETE"
-        })
-        let newbooks = books.filter((book) => book.id !== id)
-         setBooks(newbooks)
-    }
-
-    function handleEdit() {
-        setEditToggle(!editToggle)
-        
+    function handleReview(book) {
+        setReviewBook(book)
+        setReviewFormToggle(!reviewFormToggle)
     }
 
 
     return (
         <div className="book">
-            {editToggle && <BookEditForm setBooks={setBooks} book={book}></BookEditForm>}
-            {/* <button onClick={() => handleDelete(book.id)}>x</button> */}
-            <i  onClick={() => handleDelete(book.id)} className="fa-regular fa-trash-can"></i>
-            <i onClick={() => setReviewFormToggle(!reviewFormToggle)}  className="fa-solid fa-pen-fancy"></i>
-            <i onClick={() => handleEdit(book)} className="fa-solid fa-screwdriver"></i>
+           
+            <i onClick={() => handleReview(book)}  className="fa-solid fa-pen-fancy"></i>
              <h1 className="book-title">{book.title}</h1>
              <img className="book-image" src={book.image} alt="bookalt"/>
              <p>{book.author}</p>

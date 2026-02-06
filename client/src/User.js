@@ -3,24 +3,38 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
 
-function User({user}) {
+function User({user, books}) {
+    console.log(user)
 
-const popover = (
-    <Popover id="popover-basic">
+function renderPopover(book) {
+    let comment = book.reviews?.[0]?.comment;
+    let rating = book.reviews[0]?.rating
+     let stars = []
+     for (let i=0; i<5; i++) {
+       let star = (
+        <i className="fa-solid fa-star star" style={{color: i < rating ? "yellow" : "black"}}></i>
+       )
+       stars.push(star)
+
+     }
+    
+
+  console.log(rating)
+
+
+   return ( <Popover id="popover-basic">
       <Popover.Header as="h3">My Review</Popover.Header>
       <Popover.Body>
-        
-        <label className="label">Location:</label>
-       {/* <p>{item.location}</p> */}
-       <label className="label">Notes:</label>
-       {/* <p>{item.notes}</p> */}
-       <label className="label">Time:</label>
-       {/* <p>{item.time}</p> */}
-       
-        
+        <p>{comment ? comment : "You have not made a review"}</p>
+       <div>
+        {stars}
+       </div>
       </Popover.Body>
-    </Popover>
-  );
+    </Popover>)
+};
+
+
+let probooks = user && books ? books.filter((book) => book.user_id === user.id) : []
 
 
     console.log(user)
@@ -28,17 +42,18 @@ const popover = (
         <div className="user">
             <p>{user.username}</p>
             <img src={user.image} alt="alter"></img>
-            {user.books.map((book) => (
+            <div className="user-books">
+            {probooks.map((book) => (
                 <>
-                <OverlayTrigger trigger={['hover', 'focus']} placement="right" overlay={popover} rootClose>
-                    <div>
-                <p>{book.title}</p>
+                <OverlayTrigger trigger={['hover', 'focus']} placement="right" overlay={renderPopover(book)} rootClose>
+                    <div >
+                {/* <p>{book.title}</p> */}
                 <img className="book-image" src={book.image} alt="book"></img>
                 </div>
                 </OverlayTrigger>
                 </>
             ))}
-
+            </div>
 
         </div>
     )

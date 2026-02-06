@@ -2,7 +2,8 @@ import React from "react"
 import { useState} from "react";
 
 
-function BookEditForm({book, setBooks, books}) {
+function BookEditForm({book, setBooks}) {
+    // const [hideForm, setHideForm] = useState(false)
 
     const [formData, setFormData] = useState({
     title: book.title,
@@ -47,6 +48,7 @@ function BookEditForm({book, setBooks, books}) {
 
     return(
         <form onSubmit={(e) => handleSubmit(e, book.id)} className="book-edit-form">
+            {/* <button onClick={setHideForm(!hideForm)}>x</button> */}
               <label>Edit your Book</label>
            <input name="title"  value={formData.title} onChange={(e) => handleChange(e)} />
 

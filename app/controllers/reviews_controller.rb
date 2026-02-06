@@ -8,11 +8,14 @@ class ReviewsController < ApplicationController
 
     def create
         review = Review.create(review_params)
-        if review.save 
+        review.user_id = session[:user_id]
+        review.book_id = params[:book_id]
+     if review.save 
             render json: review
         else
             render json: {errors: review.errors.full_messages}, status: :unprocessable_entity
         end
+    end
 
         def destroy
             review = Review.find_by(id: params[:id])
