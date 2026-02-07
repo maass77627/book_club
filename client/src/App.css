@@ -194,7 +194,7 @@ flex-shrink: 0;
 
 .pro-img {
   border-radius: 50px;
-  height: auto;
+  height: 200px;
   width: auto;
 }
 
@@ -241,6 +241,8 @@ flex-shrink: 0;
   height: 600px;
   width: 100%;
   display: flex;
+  /* flex-wrap: wrap; */
+  overflow-y: auto;
   gap: 10px;
 }
 
@@ -265,10 +267,10 @@ flex-shrink: 0;
 }
 
 .pro-books {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 10px;
   
 }
 
@@ -277,3 +279,22 @@ flex-shrink: 0;
   align-items: center;
   justify-content: space-around;
 }
+
+.pro-book{
+  border-radius: 25px;
+  background-color: aqua;
+  height: 250px;
+}
+
+.pro-name{
+  background-color: aliceblue;
+  font-size: 100px;
+}
+
+.user-name {
+  background-color: aliceblue;
+  font-size: 100px;
+
+}
+
+

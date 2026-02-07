@@ -40,7 +40,7 @@ let probooks = user && books ? books.filter((book) => book.user_id === user.id) 
     console.log(user)
     return (
         <div className="user">
-            <p>{user.username}</p>
+          <strong> <p className="user-name">{user.username}</p></strong> 
             <img src={user.image} alt="alter"></img>
             <div className="user-books">
             {probooks.map((book) => (
@@ -54,7 +54,7 @@ let probooks = user && books ? books.filter((book) => book.user_id === user.id) 
                 </>
             ))}
             </div>
-
+                  
         </div>
     )
 }

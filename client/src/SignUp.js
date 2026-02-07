@@ -7,9 +7,10 @@ function SignUp({setUser}) {
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
-
+ 
 
   function handleSubmit(e) {
+    e.target.classList.add("hidden")
     e.preventDefault()
     fetch("http://localhost:3000/signup", {
         method: "POST",

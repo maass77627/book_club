@@ -8,7 +8,7 @@ import Home from "./Home";
 import {Routes, Route} from "react-router-dom";
  import Footer from "./Footer"
  import Profile from "./Profile";
-import ReviewsContainer from './ReviewsContainer';
+// import ReviewsContainer from './ReviewsContainer';
 import ReviewForm from './ReviewForm';
 import UserContainer from './UserContainer';
 
@@ -72,9 +72,9 @@ console.log(user)
      <h1 className="hero-title"> Book Club </h1>
      <img className="hero-image" src="bookclub.jpg" alt="bookclub"></img>
      
-     {reviewFormToggle && <ReviewForm setBooks={setBooks} reviewBook={reviewBook} user={user}></ReviewForm>}
+     {reviewFormToggle && <ReviewForm reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} setBooks={setBooks} reviewBook={reviewBook} user={user}></ReviewForm>}
     {bookFormToggle && <BookForm books={books} setBooks={setBooks}></BookForm>}
-      {/* <UserContainer users={users}></UserContainer> */}
+     
      <Routes>
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
         <Route path="/books" element={<BookContainer reviewBook={reviewBook} setReviewBook={setReviewBook} reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} user={user} setBooks={setBooks} books={books}></BookContainer>}/>
@@ -82,8 +82,8 @@ console.log(user)
          <Route path="/profile" element={<Profile setReviewFormToggle={setReviewFormToggle} reviewFormToggle={reviewFormToggle} setReviewBook={setReviewBook}  setBooks={setBooks}  books={books} user={user}></Profile>}/> 
          
      </Routes>
-     <ReviewsContainer></ReviewsContainer>
-     {/* <UserContainer users={users}></UserContainer> */}
+     {/* <ReviewsContainer></ReviewsContainer> */}
+     
       <Footer></Footer> 
     </div>
     
