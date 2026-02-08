@@ -6,11 +6,15 @@ import React from "react";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 
-function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, setReviewBook}) {
+function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, setReviewBook, editBook, setEditBook}) {
     console.log(user)
+    console.log(books)
 
 
     function renderPopover(book) {
+        // let comment = book.review?.comment;
+        // let rating = book.review?.rating
+    // let rating = book.reviews[0]?.rating
     let comment = book.reviews?.[0]?.comment;
     let rating = book.reviews[0]?.rating
      let stars = []
@@ -51,9 +55,10 @@ function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, 
          setBooks(newbooks)
     }
 
-    function handleEdit(e) {
+    function handleEdit(e, book) {
         e.stopPropagation()
         setEditToggle(!editToggle)
+        setEditBook(book)
         // setReviewFormToggle(!reviewFormToggle)
         
     }
@@ -69,7 +74,7 @@ function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, 
     console.log(probooks)
 
     return (
-        <div className="pro-wrap">
+         <div className="pro-wrap">
         <div className="profile">
              <strong> <p className="pro-name">{user.username}</p> </strong>
              <img className="pro-img" src={user.image} alt="user"></img> 
@@ -81,13 +86,13 @@ function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, 
                 <img className="pro-book-image" src={book.image} alt="image"></img>
                 {/* <p>{book.title}</p> */}
                
-                 {editToggle && <BookEditForm setBooks={setBooks} book={book}></BookEditForm>} 
+                 {editToggle && <BookEditForm editBook={editBook} setBooks={setBooks} book={book}></BookEditForm>} 
                        <div className="buttons">
                  <i onClick={(e) => handleDelete(e,book.id)} className="fa-regular fa-trash-can"></i>
 
                  <i onClick={(e) => handleReview(e,book)}  className="fa-solid fa-pen-fancy"></i>
 
-                 <i onClick={(e) => handleEdit(e)} className="fa-solid fa-screwdriver"></i> 
+                 <i onClick={(e) => handleEdit(e, book)} className="fa-solid fa-screwdriver"></i> 
                  </div>
                 </div>
                 </OverlayTrigger>
@@ -96,7 +101,7 @@ function Profile({user, setBooks, books, setReviewFormToggle, reviewFormToggle, 
               </div>
                  </div>
                  
-                </div>
+             </div>
                 
     )
 }

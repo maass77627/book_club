@@ -19,6 +19,7 @@ const [bookFormToggle, setBookFormToggle] = useState(false);
 const [reviewFormToggle, setReviewFormToggle] = useState(false)
 const [users, setUsers] = useState([])
 const [reviewBook, setReviewBook] = useState([])
+const [editBook, setEditBook] = useState([])
 
 useEffect(() => {
   fetch("http://localhost:3000/me", {
@@ -79,7 +80,7 @@ console.log(user)
       <Route path="/" element={<Home setUser={setUser} user={user}></Home>}/>
         <Route path="/books" element={<BookContainer reviewBook={reviewBook} setReviewBook={setReviewBook} reviewFormToggle={reviewFormToggle} setReviewFormToggle={setReviewFormToggle} user={user} setBooks={setBooks} books={books}></BookContainer>}/>
          <Route path="/users" element={<UserContainer books={books} users={users}></UserContainer>}/> 
-         <Route path="/profile" element={<Profile setReviewFormToggle={setReviewFormToggle} reviewFormToggle={reviewFormToggle} setReviewBook={setReviewBook}  setBooks={setBooks}  books={books} user={user}></Profile>}/> 
+         <Route path="/profile" element={<Profile editBook={editBook} setEditBook={setEditBook} setReviewFormToggle={setReviewFormToggle} reviewFormToggle={reviewFormToggle} setReviewBook={setReviewBook}  setBooks={setBooks}  books={books} user={user}></Profile>}/> 
          
      </Routes>
      {/* <ReviewsContainer></ReviewsContainer> */}

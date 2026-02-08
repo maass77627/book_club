@@ -1,9 +1,15 @@
 # Controller logic: fallback requests for React Router.
 # Leave this here to help deploy your app later!
-class FallbackController < ActionController::Base
+# class FallbackController < ActionController::Base
 
+  # def index
+  #   # React app index page
+  #   render file: 'public/index.html'
+  # end
+
+  class FallbackController < ApplicationController
   def index
-    # React app index page
-    render file: 'public/index.html'
+    render file: Rails.root.join('public', 'index.html')
   end
 end
+# end

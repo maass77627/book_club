@@ -180,6 +180,8 @@ flex-shrink: 0;
 }
 
 .profile {
+  gap: 10px;
+  position: relative;
   background-color:rgb(15, 70, 16);
   max-width: 800px;
   width: 100%;
@@ -193,6 +195,9 @@ flex-shrink: 0;
 } */
 
 .pro-img {
+  /* position: absolute; */
+  /* margin-left: 0px; */
+  /* margin-top: 100px; */
   border-radius: 50px;
   height: 200px;
   width: auto;
@@ -266,11 +271,15 @@ flex-shrink: 0;
   gap: 2px;
 }
 
+.user-name {
+  font-size: xx-large;
+}
 .pro-books {
   /* background-color: antiquewhite; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  
   
 }
 
@@ -282,16 +291,19 @@ flex-shrink: 0;
 
 .pro-book{
   border-radius: 25px;
-  background-color: aqua;
+  width: 200px;
+  background-color: aliceblue;
+  /* padding: 100px; */
+  /* background-color: aqua; */
   height: 250px;
 }
 
-.pro-name{
-  background-color: aliceblue;
-  font-size: 100px;
-}
 
-.user-name {
+
+.pro-name {
+  /* position: absolute; */
+  /* margin-top: 0px; */
+  /* margin-left:50px; */
   background-color: aliceblue;
   font-size: 100px;
 

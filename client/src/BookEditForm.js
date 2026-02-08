@@ -2,15 +2,15 @@ import React from "react"
 import { useState} from "react";
 
 
-function BookEditForm({book, setBooks}) {
+function BookEditForm({book, setBooks, editBook}) {
     // const [hideForm, setHideForm] = useState(false)
 
     const [formData, setFormData] = useState({
-    title: book.title,
-    author: book.author,
-    genre: book.genre,
-    image: book.image,
-    description: book.description
+    title: editBook.title,
+    author: editBook.author,
+    genre: editBook.genre,
+    image: editBook.image,
+    description: editBook.description
   });
 
 

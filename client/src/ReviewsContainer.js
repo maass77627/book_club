@@ -1,15 +1,15 @@
-import React from "react"
+// import React from "react"
 
 
 
-function ReviewsContainer() {
+// function ReviewsContainer() {
 
 
-    return (
-        <div className="reviews-container">
+//     return (
+//         <div className="reviews-container">
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default ReviewsContainer
+// export default ReviewsContainer
