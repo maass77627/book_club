@@ -19,6 +19,7 @@ function BookForm({books, setBooks}) {
   }
 
   function handleSubmit(e) {
+    e.target.classList.add("hidden")
     e.preventDefault();
 
     fetch("http://localhost:3000/books", {
